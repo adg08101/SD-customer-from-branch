@@ -33,7 +33,7 @@ def main_proc(p_host=HOST, p_user=USER, p_password=PASSWORD, p_db=DB, p_port=POR
     print("Done... please wait for data retrieval...")
 
     with connection.cursor() as cursor:
-        sql = f"SELECT org_name, sd_db_source FROM {p_db}.orgs ORDER BY org_name ASC;"
+        sql = f"SELECT org_name, legacy_org_name, sd_db_source FROM {p_db}.orgs ORDER BY org_name ASC;"
         cursor.execute(sql)
         organizations = cursor.fetchall()
 
